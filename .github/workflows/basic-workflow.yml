@@ -5,23 +5,20 @@ on:
 
 jobs:
 
-
- 
-
-  build:
+   test:
     runs-on: ${{matrix.os}}
     strategy:
       fail-fast: false
       matrix:
-        java : ['8','11','17']
-        os : ['macos-latest','windows-latest','ubuntu-latest']
-    name : Java ${{matrix.java}} ejemplo
+        os: ['macos-latest','windows-latest','ubuntu-latest']
+    name: Test en ${{matrix.os}}
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 17
         uses: actions/setup-java@v2
         with:
           distribution: 'adopt'
-          java-version: ${{matrix.java}}
+          java-version: '17'
+      - run: mvn test
 
 
