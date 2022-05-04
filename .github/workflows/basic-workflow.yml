@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ['macos-latest','windows-latest','ubuntu-latest']
+        os: ['ubuntu-latest']
     name: Test en ${{matrix.os}}
     steps:
       - uses: actions/checkout@v2

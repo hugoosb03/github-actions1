@@ -24,7 +24,7 @@ public class ItemsControllerTest {
 		Item postedItem = itemsRepository.postItem(item);
 		
 		// THEN
-
+		assertThat(false);
 		assertThat(postedItem.getDescription()).isEqualTo(itemDescription);
 	}
 
